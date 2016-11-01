@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jkvim/roll-to.git"
+    "url": "git+https://github.com/jkvim/roll-to.git",
+    "type": "git"
   },
   "keywords": [
     "scroll"
