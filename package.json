@@ -1,10 +1,17 @@
 {
   "name": "roll-to",
-  "version": "0.0.1",
-  "description": "scroller library",
-  "main": "index.js",
+  "version": "0.0.3",
+  "description": "scroll library",
+  "main": "roll-to.min.js",
+  "bin": {
+    "rollup": "./bin/rollup",
+    "gulp": "./bin/gulp"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp",
+    "depoly": "gulp depoly",
+    "prepublish": "npm run build",
+    "build": "rollup -c rollup.config.js"
   },
   "repository": {
     "url": "git+https://github.com/jkvim/roll-to.git",
@@ -19,8 +26,19 @@
     "url": "https://github.com/jkvim/roll-to/issues"
   },
   "homepage": "https://github.com/jkvim/roll-to#readme",
-  "dependencies": {
+  "devDependencies": {
+    "browser-sync": "^2.18.1",
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-rollup": "^2.5.1",
+    "gulp-sass": "^2.3.2",
+    "mocha": "^3.1.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-buble": "^0.14.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-stream": "^1.14.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
