@@ -20,7 +20,7 @@ const defaultOption = {
   duration: 0.5,
 }
 
-module.exports = function (option = defaultOption) {
+const RollTo = function (option = defaultOption) {
   let startime = null;
   let initPosition = null;
   let wrapper = null;
@@ -34,13 +34,19 @@ module.exports = function (option = defaultOption) {
     return wrapper === document.body ?
       wrapper.clientHeight :
       wrapper.scrollHeight;
-    ;
   };
 
   const getViewHeight = (wrapper) => {
     return wrapper === document.body ?
       window.innerHeight :
       wrapper.clientHeight;
+  };
+
+
+  const getNodeOffsetTop = (el) => {
+    var y = el.offsetTop;
+    var node = el.offsetParent;
+    return y + node.offsetTop;
   };
 
   const doScroll = (option, timestamp, offsetY) => {
@@ -133,3 +139,5 @@ module.exports = function (option = defaultOption) {
     section,
   };
 };
+
+export default RollTo;
