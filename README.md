@@ -6,22 +6,22 @@
 [example](https://jkvim.github.io/roll-to.js/)
 
 ## Install
-    `npm install roll-to.js`
+    npm install roll-to
 
 ## API
-### RollTo(option)
+### `RollTo(option)`
 #### option
 - **animate:**  {String} transition animation
 - **duration:** {String} transition duration
 - **return**    {Object} an instance to do scroll operation
 
-### rollTo.top(element)
+### `rollTo.top(element)`
 **element:** the element inside scroll wrapper
 
-### rollTo.bottom(element)
+### `rollTo.bottom(element)`
 **element:** the element inside scroll wrapper
 
-### rollTo.section(element)
+### `rollTo.section(element)`
 **element:** the element inside scroll wrapper
 
 ## Usage
