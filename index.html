@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title>scroll example</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <main>
+    <article class="item-one">
+      <ul>
+        <li><a class="nav-one" href="#one">One</a></li>
+        <li><a class="nav-two" href="#two">Two</a></li>
+        <li><a class="nav-three" href="#three">Three</a></li>
+        <li><a class="nav-four" href="#four">Four</a></li>
+      </ul>
+    </article>
+    <article class="item-two">
+      <ul>
+        <li><a class="nav-one" href="#one">One</a></li>
+        <li><a class="nav-two" href="#two">Two</a></li>
+        <li><a class="nav-three" href="#three">Three</a></li>
+        <li><a class="nav-four" href="#four">Four</a></li>
+      </ul>
+    </article>
+    <article class="item-three">
+      <ul>
+        <li><a class="nav-one" href="#one">One</a></li>
+        <li><a class="nav-two" href="#two">Two</a></li>
+        <li><a class="nav-three" href="#three">Three</a></li>
+        <li><a class="nav-four" href="#four">Four</a></li>
+      </ul>
+    </article>
+    <article class="item-four">
+      <ul>
+        <li><a class="nav-one" href="#one">One</a></li>
+        <li><a class="nav-two" href="#two">Two</a></li>
+        <li><a class="nav-three" href="#three">Three</a></li>
+        <li><a class="nav-four" href="#four">Four</a></li>
+      </ul>
+    </article>
+  </main>
+  <script>
+  const RollTo = window.RollTo;
+  const rollTo = new RollTo();
+
+  var buttons = document.querySelectorAll('article li');
+  var sections = document.querySelectorAll('article');
+
+  for (let i = 0; i < buttons.length; ++i) {
+    buttons[i].onclick = function(event) {
+      var className = event.target.className;
+      var index = className.slice(4);
+      for (let j = 0; j < sections.length; j++) {
+        if (sections[j].className.indexOf(index) > 0) {
+            rollTo.section(sections[j], timestamp);
+          break;
+        }
+      }
+    }
+  }
+
+  </script>
+</body>
+
+</html>
