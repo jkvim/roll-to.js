@@ -60,7 +60,7 @@ module.exports = function (option = defaultOption) {
     wrapper.scrollTop = initPosition + distance * v;
   };
 
-  const mixinScrollFunction = (calcPosition) => {
+  const scrollMixin = (calcPosition) => {
     return (element) => {
       function scroll(element, timestamp) {
         if (!element) {
@@ -83,35 +83,17 @@ module.exports = function (option = defaultOption) {
     }
   };
 
-  const top = (element, timestamp) => {
-    if (!element) {
-      throw Error('required element as argument');
-    }
-    if (!wrapper) {
-      wrapper = element.offsetParent;
-    }
-
+  const top = scrollMixin((element, timestamp) => {
     var offsetY = 0;
     var scrollY = wrapper.scrollTop;
     var atTop = offsetY === scrollY;
+    return {
+      stop: atTop,
+      offsetY,
+    };
+  });
 
-    if (atTop) {
-      reset();
-      return false;
-    }
-
-    doScroll();
-    raf(top.bind(null, element));
-  }
-
-  const bottom = (element, timestamp) => {
-    if (!element) {
-      throw Error('required element as argument');
-    }
-    if (!wrapper) {
-      wrapper = element.offsetParent;
-    }
-
+  const bottom = scrollMixin((element, wrapper) => {
     var scrollY = wrapper.scrollTop;
     var height = element.offsetHeight;
     var viewHeight = getViewHeight(wrapper);
@@ -119,23 +101,13 @@ module.exports = function (option = defaultOption) {
     var offsetY = wrapperHeight - viewHeight;
     var atBottom = wrapperHeight - viewHeight === scrollY;
 
-    if (atBottom) {
-      reset();
-      return false;
-    }
+    return {
+      stop: atBottom,
+      offsetY,
+    };
+  });
 
-    doScroll();
-    raf(bottom.bind(null, element));
-  }
-
-  const section = (element) => {
-    if (!element) {
-      throw Error('required element as argument');
-    }
-    if (!wrapper) {
-      wrapper = element.offsetParent;
-    }
-
+  const section = scrollMixin((element, wrapper) => {
     // offsetY represent element offsetTop to wrapper top 
     var offsetY = getNodeOffsetTop(element);
     // scrollY represent wrapper scroll offset
@@ -149,14 +121,12 @@ module.exports = function (option = defaultOption) {
     var atTop = offsetY === scrollY;
     var isLast = offsetY + height === wrapperHeight;
 
-    if (atTop || (atBottom && isLast)) {
-      reset();
-      return false;
-    }
-
-    doScroll();
-    raf(section.bind(null, element));
-  }
+    console.log(atTop, atBottom, isLast);
+    return {
+      offsetY,
+      stop: atTop || (isLast && atBottom)
+    };
+  });
 
   return {
     top,
