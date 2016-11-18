@@ -54,7 +54,7 @@
       var index = className.slice(4);
       for (let j = 0; j < sections.length; j++) {
         if (sections[j].className.indexOf(index) > 0) {
-            rollTo.section(sections[j], timestamp);
+            rollTo.section(sections[j]);
           break;
         }
       }
