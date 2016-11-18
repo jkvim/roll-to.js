@@ -28,14 +28,14 @@ module.exports = function (option = defaultOption) {
   const reset = () => {
     startime = null;
     initPosition = null;
-  }
+  };
 
   const getWrapperHeight = (wrapper) => {
     return wrapper === document.body ?
       wrapper.clientHeight :
       wrapper.scrollHeight;
     ;
-  }
+  };
 
   const getViewHeight = (wrapper) => {
     return wrapper === document.body ?
@@ -121,7 +121,6 @@ module.exports = function (option = defaultOption) {
     let atTop = offsetY === scrollY;
     let isLast = offsetY + height === wrapperHeight;
 
-    console.log(atTop, atBottom, isLast);
     return {
       offsetY,
       stop: atTop || (isLast && atBottom)
