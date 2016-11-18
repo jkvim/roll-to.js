@@ -49,13 +49,13 @@ module.exports = function (option = defaultOption) {
     }
 
     if (!startime) startime = timestamp;
-    var progress = (timestamp - startime) / 1000;
+    let progress = (timestamp - startime) / 1000;
 
-    var ease = easeFunctions[option.animate];
-    var duration = option.duration;
-    var distance = offsetY - initPosition;
-    var t = Math.min(1, Math.max(progress / duration, 0));
-    var v = ease(t, duration);
+    let ease = easeFunctions[option.animate];
+    let duration = option.duration;
+    let distance = offsetY - initPosition;
+    let t = Math.min(1, Math.max(progress / duration, 0));
+    let v = ease(t, duration);
 
     wrapper.scrollTop = initPosition + distance * v;
   };
@@ -70,8 +70,8 @@ module.exports = function (option = defaultOption) {
           wrapper = element.offsetParent;
         }
 
-        var props = calcPosition(element, wrapper);
-        var { stop, offsetY } = props;
+        let props = calcPosition(element, wrapper);
+        let { stop, offsetY } = props;
         if (stop) {
           reset();
           return false;
@@ -84,9 +84,9 @@ module.exports = function (option = defaultOption) {
   };
 
   const top = scrollMixin((element, timestamp) => {
-    var offsetY = 0;
-    var scrollY = wrapper.scrollTop;
-    var atTop = offsetY === scrollY;
+    let offsetY = 0;
+    let scrollY = wrapper.scrollTop;
+    let atTop = offsetY === scrollY;
     return {
       stop: atTop,
       offsetY,
@@ -94,12 +94,12 @@ module.exports = function (option = defaultOption) {
   });
 
   const bottom = scrollMixin((element, wrapper) => {
-    var scrollY = wrapper.scrollTop;
-    var height = element.offsetHeight;
-    var viewHeight = getViewHeight(wrapper);
-    var wrapperHeight = getWrapperHeight(wrapper);
-    var offsetY = wrapperHeight - viewHeight;
-    var atBottom = wrapperHeight - viewHeight === scrollY;
+    let scrollY = wrapper.scrollTop;
+    let height = element.offsetHeight;
+    let viewHeight = getViewHeight(wrapper);
+    let wrapperHeight = getWrapperHeight(wrapper);
+    let offsetY = wrapperHeight - viewHeight;
+    let atBottom = wrapperHeight - viewHeight === scrollY;
 
     return {
       stop: atBottom,
@@ -109,17 +109,17 @@ module.exports = function (option = defaultOption) {
 
   const section = scrollMixin((element, wrapper) => {
     // offsetY represent element offsetTop to wrapper top 
-    var offsetY = getNodeOffsetTop(element);
+    let offsetY = getNodeOffsetTop(element);
     // scrollY represent wrapper scroll offset
-    var scrollY = wrapper.scrollTop;
-    var height = element.offsetHeight;
-    var wrapperHeight = getWrapperHeight(wrapper);
-    var viewHeight = getViewHeight(wrapper);
+    let scrollY = wrapper.scrollTop;
+    let height = element.offsetHeight;
+    let wrapperHeight = getWrapperHeight(wrapper);
+    let viewHeight = getViewHeight(wrapper);
 
     // when element reach top, offsetY must equal to scrollY
-    var atBottom = wrapperHeight - viewHeight === scrollY;
-    var atTop = offsetY === scrollY;
-    var isLast = offsetY + height === wrapperHeight;
+    let atBottom = wrapperHeight - viewHeight === scrollY;
+    let atTop = offsetY === scrollY;
+    let isLast = offsetY + height === wrapperHeight;
 
     console.log(atTop, atBottom, isLast);
     return {
