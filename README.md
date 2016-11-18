@@ -3,11 +3,11 @@
   An tiny scroll library, inspired by [sweet-scroll](https://github.com/tsuyoshiwada/sweet-scroll)
 
 ## API
-### rollTo.top([option])
+### rollTo.top(element, [option])
 
-### rollTo.bottom([option])
+### rollTo.bottom(element,[option])
 
-### rollTo.el(element, [option])
+### rollTo.section(element, [option])
 
 ### option 
 @property
