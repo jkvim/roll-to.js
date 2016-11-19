@@ -93,16 +93,14 @@ const RollTo = function (option = defaultOption) {
   let wrapper = null;
 
   checkOption(option);
-  
+
   const reset = () => {
     startime = null;
     initPosition = null;
   };
 
   const getWrapperHeight = (wrapper) => {
-    return wrapper === document.body ?
-      wrapper.clientHeight :
-      wrapper.scrollHeight;
+    return wrapper.scrollHeight;
   };
 
   const getViewHeight = (wrapper) => {
@@ -192,13 +190,14 @@ const RollTo = function (option = defaultOption) {
     let viewHeight = getViewHeight(wrapper);
 
     // when element reach top, offsetY must equal to scrollY
+
     let atBottom = wrapperHeight - viewHeight === scrollY;
     let atTop = offsetY === scrollY;
-    let isLast = offsetY + height === wrapperHeight;
+    let insideView = offsetY > scrollY && (offsetY - scrollY) < viewHeight;
 
     return {
       offsetY,
-      stop: atTop || (isLast && atBottom)
+      stop: atTop || (insideView && atBottom)
     };
   });
 
