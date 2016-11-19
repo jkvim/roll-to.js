@@ -13,7 +13,6 @@ article {
     padding: 100px 0 0 0;
     width: 600px; }
   article li {
-    display: inline-block;
     width: 25%;
     margin: 0;
     padding: 0;
