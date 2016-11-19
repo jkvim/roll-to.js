@@ -13,12 +13,7 @@ article {
   display: block;
   height: 100vh;
   background: skyblue;
-  
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  text-align: center;
   
   ul {
     list-style: none;
@@ -57,8 +52,9 @@ article {
   }
 }
 
-article {
-  transition: transform 0.5s ease-out; 
+#easing {
+  width: 200px;
+  margin-top: 100px;
 }
 
 .item-one {
@@ -79,4 +75,8 @@ article {
 
 .item-four {
   background: #7c6ef5;
+}
+
+.clearfix {
+  overflow: auto;
 }
