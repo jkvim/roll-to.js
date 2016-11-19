@@ -20,11 +20,26 @@ const defaultOption = {
   duration: 1,
 }
 
+const checkOption = (option) => {
+  for (let key in defaultOption) {
+    if (!(key in option)) {
+      option[key] = defaultOption[key];
+    }
+  }
+  if (!(defaultOption[option.animate])) {
+    option.animate = defaultOption.animate;
+  }
+  if (option.duration <= 0) {
+    option.duration = defaultOption.duration;
+  }
+};
 
 const RollTo = function (option = defaultOption) {
   let startime = null;
   let initPosition = null;
   let wrapper = null;
+
+  checkOption(option);
 
   const reset = () => {
     startime = null;
