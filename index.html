@@ -9,15 +9,31 @@
 <body>
   <main>
     <article class="item-one">
-      <ul>
+      <ul class="clearfix">
         <li><a class="nav-one" href="#one">One</a></li>
         <li><a class="nav-two" href="#two">Two</a></li>
         <li><a class="nav-three" href="#three">Three</a></li>
         <li><a class="nav-four" href="#four">Four</a></li>
+        <select id="easing">
+          <option value="linear">linear</option>
+          <option value="easeOut" selected>easeOut</option>
+          <option value="easeInQuad" >easeInQuad</option>
+          <option value="easeOutQuad">easeOutQuad</option>
+          <option value="easeInOutQuad">easeInOutQuad</option>
+          <option value="easeInCubic">easeInCubic</option>
+          <option value="easeOutCubic">easeOutCubic</option>
+          <option value="easeInOutCubic">easeInOutCubic</option>
+          <option value="easeInQuart">easeInQuart</option>
+          <option value="easeOutQuart">easeOutQuart</option>
+          <option value="easeInOutQuart">easeInOutQuart</option>
+          <option value="easeInQuint">easeInQuint</option>
+          <option value="easeOutQuint">easeOutQuint</option>
+          <option value="easeInOutQuint">easeInOutQuint</option>
+        </select>
       </ul>
     </article>
     <article class="item-two">
-      <ul>
+      <ul class="clearfix">
         <li><a class="nav-one" href="#one">One</a></li>
         <li><a class="nav-two" href="#two">Two</a></li>
         <li><a class="nav-three" href="#three">Three</a></li>
@@ -25,7 +41,7 @@
       </ul>
     </article>
     <article class="item-three">
-      <ul>
+      <ul class="clearfix">
         <li><a class="nav-one" href="#one">One</a></li>
         <li><a class="nav-two" href="#two">Two</a></li>
         <li><a class="nav-three" href="#three">Three</a></li>
@@ -33,7 +49,7 @@
       </ul>
     </article>
     <article class="item-four">
-      <ul>
+      <ul class="clearfix">
         <li><a class="nav-one" href="#one">One</a></li>
         <li><a class="nav-two" href="#two">Two</a></li>
         <li><a class="nav-three" href="#three">Three</a></li>
@@ -47,6 +63,12 @@
 
   var buttons = document.querySelectorAll('article li');
   var sections = document.querySelectorAll('article');
+  var select = document.querySelector('#easing');
+
+  select.onchange = function(event) {
+    const animate = event.target.value;
+    rollTo = new RollTo({ animate });
+  }
 
   for (let i = 0; i < buttons.length; ++i) {
     buttons[i].onclick = function(event) {
