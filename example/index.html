@@ -58,12 +58,13 @@
     </article>
   </main>
   <script>
-  const RollTo = window.RollTo;
-  const rollTo = new RollTo();
+  var RollTo = window.RollTo;
+  var rollTo = new RollTo();
 
   var buttons = document.querySelectorAll('article li');
   var sections = document.querySelectorAll('article');
   var select = document.querySelector('#easing');
+  console.log(select)
 
   select.onchange = function(event) {
     const animate = event.target.value;
