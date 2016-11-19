@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,45 +12,46 @@ html, body {
 //   height: 500px;
 //   overflow-y: scroll;
 // }
-
-article {
-  display: block;
-  height: 110vh;
-  background: skyblue;
-  text-align: center;
-  
-  ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 100px 0 0 0;
-    width: 600px;
-  }
-  
-  li {
-    width: 25%;
-    margin: 0;
-    padding: 0;
-    float: left;
-    text-align: center;
-  }
- 
-  
-  a {
+@media all and (min-width: 768px) {
+  article {
     display: block;
-    height: 50px;
-    line-height: 42px;
-    width: 100px;
-    background: #47cf73;
-    text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-    border-bottom: 8px solid #08ad08;
-    border-radius: 10px;
-    box-sizing: border-box;
+    height: 110vh;
+    background: skyblue;
+    text-align: center;
     
-    &:active {
-      border-bottom: none;
-      line-height: 50px;
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 100px 0 0 0;
+      width: 600px;
+    }
+    
+    li {
+      width: 25%;
+      margin: 0;
+      padding: 0;
+      float: left;
+      text-align: center;
+    }
+  
+    
+    a {
+      display: block;
+      height: 50px;
+      line-height: 42px;
+      width: 100px;
+      background: #47cf73;
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      border-bottom: 8px solid #08ad08;
+      border-radius: 10px;
+      box-sizing: border-box;
+      
+      &:active {
+        border-bottom: none;
+        line-height: 50px;
+      }
     }
   }
 }
@@ -78,4 +83,57 @@ article {
 
 .clearfix {
   overflow: auto;
+}
+
+@media all and (max-width: 425px) { 
+  body {
+    width: 100%;
+  }
+  article {
+    display: block;
+    height: 100vh;
+    background: skyblue;
+    text-align: center;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      padding-top: 200px;
+      text-align: center;
+      margin: 0 auto;
+      width: 75%;
+    }
+    
+    li {
+      margin: 10px;
+      padding: 0;
+      display: block;
+      text-align: center;
+    }
+  
+    
+    a {
+      display: block;
+      height: 50px;
+      line-height: 42px;
+      width: 100px;
+      background: #47cf73;
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      border-bottom: 8px solid #08ad08;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      
+      &:active {
+        border-bottom: none;
+        line-height: 50px;
+      }
+    }
+  }
+
+  select {
+    display: none;
+  }
 }
