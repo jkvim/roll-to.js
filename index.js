@@ -17,8 +17,9 @@ const easeFunctions = {
 
 const defaultOption = {
   animate: 'easeOut',
-  duration: 0.5,
+  duration: 1,
 }
+
 
 const RollTo = function (option = defaultOption) {
   let startime = null;
