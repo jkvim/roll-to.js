@@ -1,6 +1,14 @@
 # roll-to.js
+> An tiny scroll library, inspired by [sweet-scroll](https://github.com/tsuyoshiwada/sweet-scroll), sweet scroll is awesome.
 
-  An tiny scroll library, inspired by [sweet-scroll](https://github.com/tsuyoshiwada/sweet-scroll), sweet scroll is awesome.
+[![Build Status](https://travis-ci.org/jkvim/roll-to.js.svg?branch=master)](https://travis-ci.org/jkvim/roll-to.js)
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+
+[npm-url]: https://npmjs.org/package/roll-to
+[downloads-image]: http://img.shields.io/npm/dm/roll-to.svg
+[npm-image]: http://img.shields.io/npm/v/roll-to.svg
+
 
 ## Example
 [example](https://jkvim.github.io/roll-to.js/)
