@@ -79,7 +79,7 @@ const checkOption = (option) => {
       option[key] = defaultOption[key];
     }
   }
-  if (!(defaultOption[option.animate])) {
+  if (!easeFunctions[option.animate]) {
     option.animate = defaultOption.animate;
   }
   if (option.duration <= 0) {
@@ -93,7 +93,7 @@ const RollTo = function (option = defaultOption) {
   let wrapper = null;
 
   checkOption(option);
-
+  
   const reset = () => {
     startime = null;
     initPosition = null;
