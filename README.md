@@ -11,7 +11,8 @@
 
 
 ## Example
-[example](https://jkvim.github.io/roll-to.js/)
+[example](https://jkvim.github.io/roll-to.js/) This example have adapt for mobile view, 
+you can try it on chrome devtool and switch to mobile dev model
 
 ## Install
     npm install roll-to
