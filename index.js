@@ -130,7 +130,7 @@ const RollTo = function (option = defaultOption) {
     let t = Math.min(1, Math.max(progress / duration, 0));
     let v = ease(t, duration);
 
-    wrapper.scrollTop = initPosition + distance * v;
+    wrapper.scrollTop = initPosition + Math.round(distance * v);
   };
 
   const scrollMixin = (calcPosition) => {
@@ -160,6 +160,7 @@ const RollTo = function (option = defaultOption) {
     let offsetY = 0;
     let scrollY = wrapper.scrollTop;
     let atTop = offsetY === scrollY;
+
     return {
       stop: atTop,
       offsetY,
@@ -188,9 +189,7 @@ const RollTo = function (option = defaultOption) {
     let height = element.offsetHeight;
     let wrapperHeight = getWrapperHeight(wrapper);
     let viewHeight = getViewHeight(wrapper);
-
-    // when element reach top, offsetY must equal to scrollY
-
+    
     let atBottom = wrapperHeight - viewHeight === scrollY;
     let atTop = offsetY === scrollY;
     let insideView = offsetY > scrollY && (offsetY - scrollY) < viewHeight;
