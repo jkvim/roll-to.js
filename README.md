@@ -32,6 +32,22 @@
 ### `rollTo.section(element)`
 **element:** the element inside scroll wrapper
 
+### animate
+- linear
+- easeOut
+- easeInQuad
+- easeOutQuad
+- easeInOutQuad
+- easeInCubic
+- easeOutCubic
+- easeInOutCubic
+- easeInQuart
+- easeOutQuart
+- easeInOutQuart
+- easeInQuint
+- easeOutQuint
+- easeInOutQuint
+
 ## Usage
 
 ```html
