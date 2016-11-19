@@ -4,7 +4,7 @@ html, body {
 
 article {
   display: block;
-  height: 100vh;
+  height: 30vh;
   background: skyblue;
   text-align: center; }
   article ul {
