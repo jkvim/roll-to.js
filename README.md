@@ -19,21 +19,22 @@ you can try it on chrome devtool and switch to mobile dev model
 
 ## API
 ### `RollTo(option)`
-#### option
+#### `option`
 - **animate:**  {String} transition animation
 - **duration:** {String} transition duration
-- **return**    {Object} an instance to do scroll operation
+
+#### `return`    {Object} an instance to do scroll operation
 
 ### `rollTo.top(element)`
-**element:** the element inside scroll wrapper
+**element:** anyone element inside scroll wrapper
 
 ### `rollTo.bottom(element)`
-**element:** the element inside scroll wrapper
+**element:** anyone element inside scroll wrapper
 
 ### `rollTo.section(element)`
-**element:** the element inside scroll wrapper
+**element:** the element you want to scroll to top
 
-### animate
+### Animate
 - linear
 - easeOut
 - easeInQuad
@@ -62,23 +63,15 @@ you can try it on chrome devtool and switch to mobile dev model
    </ul>
   </header>
  <main>
-    <article class="item-one">
-      <h1>One</h1>
-    </article>
-    <article class="item-two">
-      <h1>Two</h1>
-    </article>
-    <article class="item-three">
-      <h1>Three</h1>
-    </article>
-    <article class="item-four">
-      <h1>Four</h1>
-    </article>
+   <section class="item-one"></section>
+   <section class="item-two"></section>
+   <section class="item-three"></section>
+   <section class="item-four"></section>
   </main>
   <script>
     const rollTo = new RollTo();
     var buttons = document.querySelectorAll('li');
-    var sections = document.querySelectorAll('article');
+    var sections = document.querySelectorAll('section');
 
     for (let i = 0; i < buttons.length; ++i) {
       buttons[i].onclick = function(event) {
@@ -94,8 +87,5 @@ you can try it on chrome devtool and switch to mobile dev model
     }
   </script>
 </body>
-
-
-
 ```
 
