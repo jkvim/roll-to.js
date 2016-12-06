@@ -20,8 +20,8 @@ you can try it on chrome devtool and switch to mobile dev model
 ## API
 ### `RollTo(option)`
 #### `option`
-- **animate:**  {String} transition animation
-- **duration:** {String} transition duration
+- **animate:**  {String} transition animation, you can select of [Animate](#animate)
+- **duration:** {Number} transition duration, use millisecond as unit
 
 #### `return`    {Object} an instance to do scroll operation
 

@@ -70,7 +70,7 @@ const easeFunctions = {
 
 const defaultOption = {
   animate: 'easeOut',
-  duration: 1,
+  duration: 500,
 }
 
 const checkOption = (option) => {
@@ -122,7 +122,7 @@ const RollTo = function (option = defaultOption) {
     }
 
     if (!startime) startime = timestamp;
-    let progress = (timestamp - startime) / 1000;
+    let progress = (timestamp - startime);
 
     let ease = easeFunctions[option.animate];
     let duration = option.duration;
@@ -189,7 +189,7 @@ const RollTo = function (option = defaultOption) {
     let height = element.offsetHeight;
     let wrapperHeight = getWrapperHeight(wrapper);
     let viewHeight = getViewHeight(wrapper);
-    
+
     let atBottom = wrapperHeight - viewHeight === scrollY;
     let atTop = offsetY === scrollY;
     let insideView = offsetY > scrollY && (offsetY - scrollY) < viewHeight;
