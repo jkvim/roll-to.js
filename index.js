@@ -74,7 +74,7 @@ const easeFunctions = {
 
 const defaultOption = {
   animate: 'easeOut',
-  duration: 1,
+  duration: 500,
 };
 
 const checkOption = (option) => {
@@ -113,7 +113,6 @@ const RollTo = function (option = defaultOption) {
       wrapper.clientHeight;
   };
 
-
   const getNodeOffsetTop = (el) => {
     var y = el.offsetTop;
     var node = el.offsetParent;
@@ -126,7 +125,7 @@ const RollTo = function (option = defaultOption) {
     }
 
     if (!startime) startime = timestamp;
-    let progress = (timestamp - startime) / 1000;
+    let progress = (timestamp - startime);
 
     let ease = easeFunctions[option.animate];
     let duration = option.duration;
@@ -140,11 +139,10 @@ const RollTo = function (option = defaultOption) {
   const scrollMixin = (calcPosition) => {
     return (element) => {
       function scroll(element, timestamp) {
-        if (!element) {
-          throw Error('required element as argument');
-        }
-        if (!wrapper) {
+        if (!wrapper && element) {
           wrapper = element.offsetParent;
+        } else {
+          wrapper = document.body;
         }
 
         let props = calcPosition(element, wrapper);
@@ -173,7 +171,6 @@ const RollTo = function (option = defaultOption) {
 
   const bottom = scrollMixin((element, wrapper) => {
     let scrollY = wrapper.scrollTop;
-    let height = element.offsetHeight;
     let viewHeight = getViewHeight(wrapper);
     let wrapperHeight = getWrapperHeight(wrapper);
     let offsetY = wrapperHeight - viewHeight;
@@ -193,7 +190,7 @@ const RollTo = function (option = defaultOption) {
     let height = element.offsetHeight;
     let wrapperHeight = getWrapperHeight(wrapper);
     let viewHeight = getViewHeight(wrapper);
-    
+
     let atBottom = wrapperHeight - viewHeight === scrollY;
     let atTop = offsetY === scrollY;
     let insideView = offsetY > scrollY && (offsetY - scrollY) < viewHeight;
