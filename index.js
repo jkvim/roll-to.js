@@ -109,7 +109,6 @@ const RollTo = function (option = defaultOption) {
       wrapper.clientHeight;
   };
 
-
   const getNodeOffsetTop = (el) => {
     var y = el.offsetTop;
     var node = el.offsetParent;
@@ -136,11 +135,10 @@ const RollTo = function (option = defaultOption) {
   const scrollMixin = (calcPosition) => {
     return (element) => {
       function scroll(element, timestamp) {
-        if (!element) {
-          throw Error('required element as argument');
-        }
-        if (!wrapper) {
+        if (!wrapper && element) {
           wrapper = element.offsetParent;
+        } else {
+          wrapper = document.body;
         }
 
         let props = calcPosition(element, wrapper);
@@ -169,7 +167,6 @@ const RollTo = function (option = defaultOption) {
 
   const bottom = scrollMixin((element, wrapper) => {
     let scrollY = wrapper.scrollTop;
-    let height = element.offsetHeight;
     let viewHeight = getViewHeight(wrapper);
     let wrapperHeight = getWrapperHeight(wrapper);
     let offsetY = wrapperHeight - viewHeight;
