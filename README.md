@@ -11,9 +11,9 @@
 
 
 ## Example
-[example](https://jkvim.github.io/roll-to.js/) This example have adapt for mobile view, 
+- [Example](https://jkvim.github.io/roll-to.js/) This example have adapt for mobile view, 
 you can try it on chrome devtool and switch to mobile dev model
-[Codepen](http://codepen.io/wewea/pen/jVVgvN)
+- [Codepen](http://codepen.io/wewea/pen/jVVgvN)
 
 ## Install
     npm install roll-to
@@ -26,11 +26,11 @@ you can try it on chrome devtool and switch to mobile dev model
 
 #### `return`    {Object} an instance to do scroll operation
 
-### `rollTo.top(element)`
-**element:** anyone element inside scroll wrapper
+### `rollTo.top()`
+scroll to top of window
 
-### `rollTo.bottom(element)`
-**element:** anyone element inside scroll wrapper
+### `rollTo.bottom()`
+scroll to bottom of window
 
 ### `rollTo.section(element)`
 **element:** the element you want to scroll to top
