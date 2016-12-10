@@ -49,6 +49,53 @@ html, body {
       }
     }
   }
+
+  .btn-top,.btn-bottom {
+    position: fixed;
+    width: 50px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    &:after {
+      content: "";
+      display: flex;
+      width: 20px;
+      height: 20px;
+      border: 5px solid #000;
+      margin-left: 5px;
+      transform: rotate(45deg);
+    }
+
+    &:active {
+      filter: opacity(30%);
+    }
+  }
+
+  .btn-top {
+    right: 30px;
+    bottom: 170px;
+
+    &:after {
+      border-bottom: none;
+      border-right: none;
+      margin-top: 5px;
+    }
+  }
+
+  .btn-bottom {
+    right: 30px;
+    bottom: 100px;
+
+    &:after {
+      border-top: none;
+      border-left: none;
+      margin-bottom: 5px;
+    }
+  }
+
 }
 
 #easing {

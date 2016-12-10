@@ -96,6 +96,10 @@
         <li><a class="nav-four" href="#four">Four</a></li>
       </ul>
     </article>
+    <footer>
+      <button class="btn-top"></button>
+      <button class="btn-bottom"></button>
+    </footer>
   </main>
   <script>
   var RollTo = window.RollTo;
@@ -104,6 +108,8 @@
   var buttons = document.querySelectorAll('article li');
   var sections = document.querySelectorAll('article');
   var select = document.querySelector('#easing');
+  var buttonTop = document.querySelector('.btn-top');
+  var buttonBottom = document.querySelector('.btn-bottom');
 
   select.onchange = function(event) {
     const animate = event.target.value;
@@ -122,6 +128,16 @@
       }
     }
   }
+
+  buttonTop.onclick = () => {
+    rollTo.top();
+  }
+
+  buttonBottom.onclick = () => {
+    rollTo.bottom();
+  }
+
+  
 
   </script>
 </body>
