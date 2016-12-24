@@ -96,46 +96,46 @@
         <li><a class="nav-four" href="#four">Four</a></li>
       </ul>
     </article>
-    <footer>
+    <!--<footer>
       <button class="btn-top"></button>
       <button class="btn-bottom"></button>
-    </footer>
+    </footer>-->
   </main>
   <script>
-  var RollTo = window.RollTo;
-  var rollTo = new RollTo();
+  // var RollTo = window.RollTo;
+  // var rollTo = new RollTo();
 
-  var buttons = document.querySelectorAll('article li');
-  var sections = document.querySelectorAll('article');
-  var select = document.querySelector('#easing');
-  var buttonTop = document.querySelector('.btn-top');
-  var buttonBottom = document.querySelector('.btn-bottom');
+  // var buttons = document.querySelectorAll('article li');
+  // var sections = document.querySelectorAll('article');
+  // var select = document.querySelector('#easing');
+  // //var buttonTop = document.querySelector('.btn-top');
+  // //var buttonBottom = document.querySelector('.btn-bottom');
 
-  select.onchange = function(event) {
-    const animate = event.target.value;
-    rollTo = new RollTo({ animate });
-  }
+  // select.onchange = function(event) {
+  //   const animate = event.target.value;
+  //   rollTo = new RollTo({ animate });
+  // }
 
-  for (let i = 0; i < buttons.length; ++i) {
-    buttons[i].onclick = function(event) {
-      var className = event.target.className;
-      var index = className.slice(4);
-      for (let j = 0; j < sections.length; j++) {
-        if (sections[j].className.indexOf(index) > 0) {
-            rollTo.section(sections[j]);
-          break;
-        }
-      }
-    }
-  }
+  // for (let i = 0; i < buttons.length; ++i) {
+  //   buttons[i].onclick = function(event) {
+  //     var className = event.target.className;
+  //     var index = className.slice(4);
+  //     for (let j = 0; j < sections.length; j++) {
+  //       if (sections[j].className.indexOf(index) > 0) {
+  //           rollTo.section(sections[j]);
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
 
-  buttonTop.onclick = () => {
-    rollTo.top();
-  }
+  // buttonTop.onclick = () => {
+  //   rollTo.top();
+  // }
 
-  buttonBottom.onclick = () => {
-    rollTo.bottom();
-  }
+  // buttonBottom.onclick = () => {
+  //   rollTo.bottom();
+  // }
 
   
 
