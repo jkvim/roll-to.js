@@ -129,4 +129,6 @@ html, body {
         border-bottom: none;
         line-height: 50px; }
   select {
+    display: none; }
+  .btn-top, .btn-bottom {
     display: none; } }
